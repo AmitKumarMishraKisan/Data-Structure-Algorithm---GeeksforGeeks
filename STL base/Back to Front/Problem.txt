@@ -1,0 +1,28 @@
+Given a vector of N positive integers. Your task is to print the vector elements in reverse order.
+
+Hint: You may use rbegin and rend.
+
+Input:
+First line of input contains number of testcase, T. For each testcase, first line of input contains N, size of vector. Next line contains N elements seperated by space.
+
+Output:
+For each testcase, print the vector elements in reverse order.
+
+Constraints:
+1 <= T <= 100
+1 <= N <= 106
+1 <= V[i] <= 1012
+
+User Task:
+Your task is to complete the function reverseIterator() which accepts it1 and it2 as two parameters and prints the vector elements in reverse order.
+
+Example:
+Input:
+1
+5
+1 2 3 4 5
+Output:
+5 4 3 2 1
+
+Explanation:
+Testcase 1: Vector elements in reverse order are as 5, 4, 3, 2, 1.
