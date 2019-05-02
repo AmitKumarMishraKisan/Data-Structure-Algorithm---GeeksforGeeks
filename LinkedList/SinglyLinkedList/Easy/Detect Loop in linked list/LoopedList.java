@@ -10,7 +10,7 @@ class Node {
     }
 }
 
-class LinkedList {
+class LoopedList {
     private Node head;  // head of list
 
     /* Linked list Node*/
