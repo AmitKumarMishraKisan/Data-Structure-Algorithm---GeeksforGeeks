@@ -44,7 +44,7 @@ public class InterpolationSearch {
                 System.out.println(count);;
                 return -1;
             }
-            int pos = (((K - arr[lb]) * (ub - lb)) / (arr[ub] - arr[lb]));
+            int pos = lb + (((K - arr[lb]) * (ub - lb)) / (arr[ub] - arr[lb]));
             if (arr[pos] == K) {
                 System.out.println(count);
                 return pos;
