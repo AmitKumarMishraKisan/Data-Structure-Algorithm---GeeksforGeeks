@@ -33,23 +33,23 @@ public class InfixToPostfix {
 	}
 
 	private void postfixConversion() {
+		StringBuilder exp = new StringBuilder();
 		Stack<Character> stack = new Stack<>();
 		postfix = new String("");
 		for (int iter = 0; iter < infix.length(); iter++) {
 			char ch = infix.charAt(iter);
 			if (Character.isLetterOrDigit(ch)) {
-				postfix += ch;
+				exp.append(ch);
 			} else if (ch == '(') {
 				stack.push(ch);
 			} else if (ch == ')') {
 				while (!stack.empty() && stack.peek() != '(') {
-					postfix += stack.pop();
+					exp.append(stack.pop());
 				}
 				if (!stack.empty() && stack.peek() == '(') {
 					stack.pop();
 				} else {
-					postfix = new String("");
-					postfix += "Invalid Expression";
+					postfix = "Invalid Expression";
 					return;
 				}
 			} else {
@@ -57,20 +57,19 @@ public class InfixToPostfix {
 					if (stack.peek() == '(') {
 						break;
 					}
-					postfix += stack.pop();
+					exp.append(stack.pop());
 				}
 				stack.push(ch);
 			}
 		}
 		while (!stack.empty()) {
 			if (stack.peek() == '(') {
-				postfix = new String("");
-				postfix += "Invalid Expression";
+				postfix = "Invalid Expression";
 				return;
 			}
-			postfix += stack.pop();
+			exp.append(stack.pop());
 		}
-		return;
+		postfix = exp.toString();
 	}
 
 	private int getPrecedance(char ch) {
